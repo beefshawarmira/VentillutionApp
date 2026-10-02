@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="VentillutionApp.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#E8E0CF">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="38,35,38,30"
+            Spacing="0">
+
+            <!-- LOGO -->
+            <Image
+            Source="ventillutionlogo.jpeg"
+            WidthRequest="72"
+            HeightRequest="72"
+            HorizontalOptions="Center"
+            Aspect="AspectFit"/>
+
+            <!-- SPACE -->
+            <BoxView
+                HeightRequest="85"
+                Opacity="0"/>
+
+            <!-- TITLE -->
+            <Label
+                Text="Welcome back!"
+                FontSize="24"
+                TextColor="#26392F"
+                FontFamily="OpenSans"
+                HorizontalOptions="Start"/>
+
+            <Label
+                Text="Please Sign in."
+                FontSize="10"
+                TextColor="#7B817A"
+                Margin="0,3,0,0"/>
+
+            <!-- EMAIL -->
+            <Label
+                Text="EMAIL ADDRESS"
+                FontSize="9"
+                TextColor="#37443C"
+                Margin="0,18,0,5"/>
+
+            <Border
+                HeightRequest="42"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="EmailEntry"
+                    Placeholder="name@example.com"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    Keyboard="Email"
+                    Margin="8,0"/>
+            </Border>
+
+            <!-- PASSWORD -->
+            <Label
+                Text="PASSWORD"
+                FontSize="9"
+                TextColor="#37443C"
+                Margin="0,12,0,5"/>
+
+            <Border
+                HeightRequest="42"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="PasswordEntry"
+                    Placeholder="••••••••••••"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    IsPassword="True"
+                    Margin="8,0"/>
+            </Border>
+
+            <!-- FORGOT PASSWORD -->
+            <Label
+            Text="Forgot Password?"
+            FontSize="9"
+            TextColor="#37443C"
+            HorizontalOptions="End"
+            Margin="0,7,2,0"
+            TextDecorations="Underline">
+
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="ForgotPassword_Tapped"/>
+            </Label.GestureRecognizers>
+
+            </Label>
+
+            <!-- LOGIN BUTTON -->
+            <Button
+                x:Name="LoginButton"
+                Text="Log In"
+                Clicked="LoginButton_Clicked"
+                HeightRequest="43"
+                CornerRadius="22"
+                BackgroundColor="#385343"
+                TextColor="#FFFFFF"
+                FontSize="12"
+                Margin="0,14,0,0"/>
+
+            <!-- REGISTER -->
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Margin="0,80,0,0">
+
+                <Label
+                    Text="Don't have an account yet? "
+                    FontSize="9"
+                    TextColor="#777B75"/>
+
+                <Label
+                    Text="Register here"
+                    FontSize="9"
+                    TextColor="#26392F"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RegisterHere_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

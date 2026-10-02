@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="VentillutionApp.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#E8E0CF">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Spacing="0">
+
+            <!-- HEADER -->
+            <Grid
+                HeightRequest="48"
+                BackgroundColor="#F8F6F0"
+                Padding="12,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- LOGO -->
+                <Image
+                Source="ventillutionlogo.jpeg"
+                WidthRequest="45"
+                HeightRequest="45"
+                Aspect="AspectFit"/>
+
+                <!-- APP NAME -->
+                <Label
+                    Grid.Column="1"
+                    Text="Ventillution"
+                    FontSize="11"
+                    TextColor="#26392F"
+                    VerticalOptions="Center"
+                    Margin="6,0,0,0"/>
+
+                <!-- USER NAME -->
+                <VerticalStackLayout
+                    Grid.Column="2"
+                    Spacing="0"
+                    VerticalOptions="Center"
+                    Margin="0,0,8,0">
+
+                    <Label
+                        x:Name="UserNameLabel"
+                        Text="User"
+                        FontSize="8"
+                        TextColor="#26392F"
+                        HorizontalOptions="End"/>
+
+                    <Label
+                        Text="Home Overview"
+                        FontSize="6"
+                        TextColor="#7B817A"
+                        HorizontalOptions="End"/>
+                </VerticalStackLayout>
+
+                <!-- LOGOUT -->
+                <Button
+                    Grid.Column="3"
+                    Text="Log Out"
+                    Clicked="LogoutButton_Clicked"
+                    HeightRequest="25"
+                    Padding="8,0"
+                    CornerRadius="12"
+                    BackgroundColor="#D95353"
+                    TextColor="White"
+                    FontSize="7"
+                    VerticalOptions="Center"/>
+
+            </Grid>
+
+
+            <!-- MAIN CONTENT -->
+            <VerticalStackLayout
+                Padding="14,20,14,20"
+                Spacing="0">
+
+                <!-- WELCOME -->
+                <Label
+                    Text="Welcome to Ventillution"
+                    FontSize="19"
+                    TextColor="#26392F"/>
+
+                <Label
+                    Text="Your indoor environment is currently stable."
+                    FontSize="8"
+                    TextColor="#7B817A"
+                    Margin="0,3,0,15"/>
+
+
+                <!-- SENSOR CARDS -->
+                <Grid
+                    ColumnSpacing="8">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- TEMPERATURE -->
+                    <Border
+                        Grid.Column="0"
+                        HeightRequest="53"
+                        BackgroundColor="#F8F6F0"
+                        Stroke="#718076"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 7">
+
+                        <VerticalStackLayout
+                            Padding="8,6">
+
+                            <Label
+                                Text="ROOM TEMP."
+                                FontSize="7"
+                                TextColor="#7B817A"/>
+
+                            <Label
+                                Text="24.5°C"
+                                FontSize="15"
+                                TextColor="#26392F"
+                                Margin="0,2,0,0"/>
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- HUMIDITY -->
+                    <Border
+                        Grid.Column="1"
+                        HeightRequest="53"
+                        BackgroundColor="#F8F6F0"
+                        Stroke="#718076"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 7">
+
+                        <VerticalStackLayout
+                            Padding="8,6">
+
+                            <Label
+                                Text="HUMIDITY"
+                                FontSize="7"
+                                TextColor="#7B817A"/>
+
+                            <Label
+                                Text="58%"
+                                FontSize="15"
+                                TextColor="#26392F"
+                                Margin="0,2,0,0"/>
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+
+                <!-- HISTORY TITLE -->
+                <Label
+                    Text="History"
+                    FontSize="14"
+                    TextColor="#26392F"
+                    Margin="0,17,0,0"/>
+
+                <Label
+                    Text="From 30 days ago"
+                    FontSize="7"
+                    TextColor="#7B817A"
+                    Margin="0,1,0,9"/>
+
+
+                <!-- HISTORY CARDS -->
+
+                <!-- 05:00 PM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="05:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="CO2 levels are normal • 410 ppm"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 04:00 PM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="04:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Ventilation flow is optimal"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 03:00 PM WARNING -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#D9A928"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="03:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="HAZARDOUS / WARNING"
+                            FontSize="7"
+                            TextColor="#D09A1C"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Elevated particulate matter detected"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 02:00 PM DANGER -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#D95353"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="02:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="HARMFUL"
+                            FontSize="7"
+                            TextColor="#D95353"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Critical CO2 spike • 1200 ppm"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 01:00 PM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="01:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Air quality restored to safe levels"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 12:00 PM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#D9A928"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="12:00 PM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="HAZARDOUS / WARNING"
+                            FontSize="7"
+                            TextColor="#D09A1C"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="High humidity warning • 72%"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 11:00 AM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="11:00 AM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Safe room air index matched"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 10:00 AM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="10:00 AM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Fresh air intake active"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 09:00 AM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,6">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#D95353"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="09:00 AM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="HARMFUL"
+                            FontSize="7"
+                            TextColor="#D95353"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="High TVOC chemical levels detected"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- 08:00 AM -->
+                <Border
+                    HeightRequest="67"
+                    BackgroundColor="#F8F6F0"
+                    Stroke="#A5ADA5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 7"
+                    Margin="0,0,0,15">
+
+                    <VerticalStackLayout Padding="8,6">
+
+                        <HorizontalStackLayout Spacing="5">
+
+                            <BoxView
+                                WidthRequest="6"
+                                HeightRequest="6"
+                                CornerRadius="3"
+                                Color="#3D8B57"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="08:00 AM"
+                                FontSize="7"
+                                FontAttributes="Bold"
+                                TextColor="#26392F"/>
+
+                            <Label
+                                Text="⌄"
+                                FontSize="9"
+                                TextColor="#5E6A62"
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="GOOD / SAFE"
+                            FontSize="7"
+                            TextColor="#3D8B57"
+                            Margin="11,3,0,0"/>
+
+                        <Label
+                            Text="Optimal morning baseline reached"
+                            FontSize="6"
+                            TextColor="#7B817A"
+                            Margin="11,1,0,0"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+                <!-- FOOTER -->
+                <Label
+                    Text="Ventillution Smart Environment Systems © 2025"
+                    FontSize="6"
+                    TextColor="#7B817A"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,5"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

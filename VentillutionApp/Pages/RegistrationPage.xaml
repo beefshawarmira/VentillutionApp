@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="VentillutionApp.Pages.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#E8E0CF">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="38,30,38,30"
+            Spacing="0">
+
+            <!-- LOGO -->
+            <Image
+            Source="ventillutionlogo.jpeg"
+            WidthRequest="55"
+            HeightRequest="55"
+            HorizontalOptions="Center"
+            Aspect="AspectFit"/>
+
+            <!-- TITLE -->
+            <Label
+                Text="Create account to get&#10;started"
+                FontSize="21"
+                TextColor="#26392F"
+                Margin="0,28,0,0"/>
+
+            <Label
+                Text="Please fill in your details below."
+                FontSize="10"
+                TextColor="#7B817A"
+                Margin="0,3,0,13"/>
+
+
+            <!-- FULL NAME -->
+            <Label
+                Text="FULL NAME"
+                FontSize="8"
+                TextColor="#37443C"
+                Margin="0,0,0,5"/>
+
+            <Border
+                HeightRequest="40"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="FullNameEntry"
+                    Placeholder="John Doe"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    Margin="8,0"/>
+            </Border>
+
+
+            <!-- EMAIL -->
+            <Label
+                Text="EMAIL ADDRESS"
+                FontSize="8"
+                TextColor="#37443C"
+                Margin="0,10,0,5"/>
+
+            <Border
+                HeightRequest="40"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="EmailEntry"
+                    Placeholder="name@example.com"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    Keyboard="Email"
+                    Margin="8,0"/>
+            </Border>
+
+
+            <!-- PASSWORD -->
+            <Label
+                Text="PASSWORD"
+                FontSize="8"
+                TextColor="#37443C"
+                Margin="0,10,0,5"/>
+
+            <Border
+                HeightRequest="40"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="PasswordEntry"
+                    Placeholder="••••••••••••"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    IsPassword="True"
+                    Margin="8,0"/>
+            </Border>
+
+
+            <!-- CONFIRM PASSWORD -->
+            <Label
+                Text="CONFIRM PASSWORD"
+                FontSize="8"
+                TextColor="#37443C"
+                Margin="0,10,0,5"/>
+
+            <Border
+                HeightRequest="40"
+                BackgroundColor="#F8F6F0"
+                Stroke="#718076"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
+
+                <Entry
+                    x:Name="ConfirmPasswordEntry"
+                    Placeholder="••••••••••••"
+                    PlaceholderColor="#B1B3AD"
+                    TextColor="#26392F"
+                    FontSize="11"
+                    IsPassword="True"
+                    Margin="8,0"/>
+            </Border>
+
+
+            <!-- CREATE ACCOUNT -->
+            <Button
+                x:Name="CreateAccountButton"
+                Text="Create Account"
+                Clicked="CreateAccountButton_Clicked"
+                HeightRequest="42"
+                CornerRadius="22"
+                BackgroundColor="#385343"
+                TextColor="White"
+                FontSize="11"
+                Margin="0,12,0,0"/>
+
+
+            <!-- LOGIN LINK -->
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Margin="0,48,0,0">
+
+                <Label
+                    Text="Already have an account? "
+                    FontSize="9"
+                    TextColor="#777B75"/>
+
+                <Label
+                    Text="Log in here"
+                    FontSize="9"
+                    TextColor="#26392F"
+                    TextDecorations="Underline">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="LoginHere_Tapped"/>
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
